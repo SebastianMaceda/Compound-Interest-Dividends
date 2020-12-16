@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(75, 109, 204);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.interestPerYear{
+    width: 50%;
+    margin: auto;
+    background-color: red;
+    height: 10vh;
+}
+.randomLi{
+    background-color: orange;
+    
+}
