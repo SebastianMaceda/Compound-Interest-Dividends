@@ -7,8 +7,23 @@ body{
     background-color: rgb(75, 109, 204);
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+}
+label{
+    color: #ffffff;
+    text-transform: capitalize;
+    text-align: left;
+    width: 100%;
+    margin: 10px 0;
 }
 .interestPerYear{
     width: 50%;

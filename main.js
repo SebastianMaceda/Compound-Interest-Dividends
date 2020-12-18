@@ -1,43 +1,30 @@
-const interestUl = document.querySelector('.interestPerYear');
+import {calculator} from './compoundCalculator.js'
 
-let intialCapital = 500;
-let timeInYears = 35;
-let interestRate = 7;
+let intialCapital;
+let timeInYears;
+let interestRate;
 
-class random{
-    constructor(intialInvestment, lengthOfTime, interestRate){
-        this.intialInvestment = intialInvestment;
-        this.lengthOfTime = lengthOfTime;
-        this.interestRate = interestRate/ 100;
-    }
-    get compoundInterestCalculator(){
-        return this.compoundInfo();
-    }
-    compoundInfo() {
-        let total = 0;
-        for (let i = 0; i < this.lengthOfTime; i++) {
-            this.intialInvestment += this.intialInvestment * this.interestRate;
-            total = this.intialInvestment;
+const intialInvestmentInput = document.querySelector('#intialInvestmentInput');
+const lengthOfTimeInput = document.querySelector('#lengthOfTimeInput');
+const interestRateInput = document.querySelector('#interestRateInput');
 
+const calculateBtn = document.querySelector('#calculateBtn');
 
-            const randomLi = document.createElement('li');
-            randomLi.classList = "randomLi";
-            total = Math.round(total * 100)/ 100;
+function myFunction(e) {
+    console.log("bruv");
+    preventDefault();
+    
+    intialCapital = intialInvestmentInput.value;
+    timeInYears = lengthOfTimeInput.value;
+    interestRate = interestRateInput.value;
 
-            randomLi.textContent = `${total}`
-
-            
-            console.log(total);
-            console.log(i);
-            interestUl.appendChild(randomLi);
-
-
-        }
-        return this.intialInvestment;
-    }
+    console.log(intialCapital, timeInYears, interestRate);
 }
 
+calculateBtn.addEventListener('submit', myFunction());
 
-let p = new random(intialCapital, timeInYears, interestRate)
+
+
+let p = new calculator(intialCapital, timeInYears, interestRate)
 
 p.compoundInterestCalculator;
