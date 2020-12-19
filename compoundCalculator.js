@@ -1,3 +1,5 @@
+const interestUl = document.querySelector('.interestPerYear');
+
 class calculator{
     constructor(intialInvestment, lengthOfTime, interestRate, monthlyContribution){
         this.intialInvestment = parseInt(intialInvestment);
@@ -9,9 +11,8 @@ class calculator{
         return this.compoundInfo();
     }
     compoundInfo() {
-        const interestUl = document.querySelector('.interestPerYear');
         let total = parseInt(intialCapital);
-        for (let i = 0; i <= this.lengthOfTime; i++) {
+        for (let i = 0; i < this.lengthOfTime; i++) {
             if (i > 0){
                 console.log(this.monthlyContribution);
                 this.intialInvestment += this.monthlyContribution;
@@ -25,18 +26,12 @@ class calculator{
             randomLi.classList = "randomLi";
             total = Math.round(total * 100)/ 100;
 
-            randomLi.textContent = `${total}`
+            randomLi.textContent = `${this.intialInvestment}`
 
             interestUl.appendChild(randomLi);
-            if (i == (this.lengthOfTime - 1)){
-                console.log(i);
-            }
-            
-
-            console.log(i, this.intialInvestment);
 
         }
-        return this.intialInvestment;
+        return this.total;
     }
 }
 
@@ -53,16 +48,19 @@ const intialInvestmentInput = document.querySelector('#intialInvestmentInput');
 const lengthOfTimeInput = document.querySelector('#lengthOfTimeInput');
 const interestRateInput = document.querySelector('#interestRateInput');
 const monthlyContributionsInput = document.querySelector('#monthlyContributionsInput');
+let p;
 
 function cheerio(event) {
     event.preventDefault();
+    interestUl.innerHTML = "";
 
     intialCapital = intialInvestmentInput.value;
     timeInYears = lengthOfTimeInput.value;
     interestRate = interestRateInput.value;
     monthlyContribution = monthlyContributionsInput.value;
 
-    let p = new calculator(intialCapital, timeInYears, interestRate, monthlyContribution)
+
+    p = new calculator(intialCapital, timeInYears, interestRate, monthlyContribution)
 
     p.compoundInterestCalculator;
     // console.log(intialCapital, timeInYears, interestRate);
