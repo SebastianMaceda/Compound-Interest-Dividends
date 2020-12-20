@@ -63,7 +63,7 @@ function cheerio(event) {
     p = new calculator(intialCapital, timeInYears, interestRate, monthlyContribution)
 
     p.compoundInterestCalculator;
-    // console.log(intialCapital, timeInYears, interestRate);
+    console.log(intialCapital, timeInYears, interestRate);
 }
 
 
