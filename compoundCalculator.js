@@ -3,24 +3,34 @@ const interestUl = document.querySelector('.interestPerYear');
 class calculator{
     constructor(intialInvestment, lengthOfTime, interestRate, monthlyContribution){
         this.intialInvestment = parseInt(intialInvestment);
-        this.lengthOfTime = lengthOfTime;
-        this.interestRate = interestRate/ 100;
+        this.lengthOfTime = parseInt(lengthOfTime);
+        this.interestRate = 1 + (interestRate/ 100);
         this.monthlyContribution = monthlyContribution * 12;
     }
     get compoundInterestCalculator(){
         return this.compoundInfo();
     }
     compoundInfo() {
-        let total = parseInt(intialCapital);
+        // let total = parseInt(intialCapital);
+        let total = this.intialInvestment;
+        let ransom;
         for (let i = 0; i < this.lengthOfTime; i++) {
-            if (i > 0){
-                console.log(this.monthlyContribution);
-                this.intialInvestment += this.monthlyContribution;
-                console.log(i, this.intialInvestment);
-            }
+            // if (i > 0){
+                this.intialInvestment = parseInt(this.intialInvestment + monthlyContribution)
+            // }
+            console.log("--------------1--------------");
+            console.log(this.intialInvestment);
+            console.log(this.lengthOfTime);
+            console.log(this.interestRate);
+            console.log(this.monthlyContribution);
+            console.log(total);
+            console.log('-randson', ransom);
+
+        
+            total += this.intialInvestment * (this.interestRate - 1);
+            ransom = this.intialInvestment * (this.interestRate - 1);
+            this.intialInvestment += this.monthlyContribution;
             
-            this.intialInvestment += this.intialInvestment * this.interestRate;
-            total = this.intialInvestment;
 
             const randomLi = document.createElement('li');
             randomLi.classList = "randomLi";
@@ -30,8 +40,19 @@ class calculator{
 
             interestUl.appendChild(randomLi);
 
+
+            console.log("--------------2--------------");
+            console.log(this.intialInvestment);
+            console.log(this.lengthOfTime);
+            console.log(this.interestRate);
+            console.log(this.monthlyContribution);
+            console.log(total);
+            console.log('-randson', ransom);
+
+            
+
         }
-        return this.total;
+        return this.intialInvestment;
     }
 }
 
@@ -60,11 +81,16 @@ function cheerio(event) {
     monthlyContribution = monthlyContributionsInput.value;
 
 
-    p = new calculator(intialCapital, timeInYears, interestRate, monthlyContribution)
+    // p = new calculator(intialCapital, timeInYears, interestRate, monthlyContribution);
+    p = new calculator(5000, 5, 5, 75);
 
     p.compoundInterestCalculator;
-    console.log(intialCapital, timeInYears, interestRate);
+    // console.log(intialCapital, timeInYears, interestRate);
 }
 
 
 export {calculator, cheerio}
+
+
+
+// (Intial Investment + (MonthlyContribution * 12)) interest * years 
