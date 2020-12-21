@@ -23,13 +23,14 @@ class calculator{
             console.log(this.lengthOfTime);
             console.log(this.interestRate);
             console.log(this.monthlyContribution);
-            console.log(total);
+            console.log(total, "Total");
             console.log('-randson', ransom);
 
         
-            total += this.intialInvestment * (this.interestRate - 1);
-            ransom = this.intialInvestment * (this.interestRate - 1);
-            this.intialInvestment += this.monthlyContribution;
+            total += this.intialInvestment * (this.interestRate);
+            console.log(this.intialInvestment, "Intial");
+            // ransom = this.intialInvestment * (this.interestRate - 1);
+            total = this.intialInvestment + this.monthlyContribution;
             
 
             const randomLi = document.createElement('li');
@@ -46,7 +47,7 @@ class calculator{
             console.log(this.lengthOfTime);
             console.log(this.interestRate);
             console.log(this.monthlyContribution);
-            console.log(total);
+            console.log(total, "Total");
             console.log('-randson', ransom);
 
             
