@@ -12,11 +12,12 @@ class calculator{
     }
     compoundInfo() {
         // const amount = this.intialInvestment * (Math.pow((1 + (this.interestRate)),  (1 * this.lengthOfTime)));
-        let amount;
+        let amount = 0;
+        let q = 0;
         for (let i = 0; i < this.lengthOfTime; i++) {
-            amount = this.intialInvestment * (Math.pow(1 + (this.interestRate)));
-            console.log((Math.pow(1 + this.interestRate, 2)));
-            console.log(amount);
+            amount += this.intialInvestment * (1 + (this.interestRate));
+            q += amount - this.intialInvestment;
+            console.log(amount, q);
 
         }
         console.log(amount);
